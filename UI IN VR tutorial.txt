@@ -1,0 +1,39 @@
+VR uses UI and the canvas system, but with slight modifications.
+
+So heres what you have to do, 
+
+Remove the graphic raycaster component from the canvas in the inspector menu.
+
+and add something called OVR Raycaster.
+
+After that, look for a gameobject called: UI HELPER, (IN THE PROJECT MENU) after that drag and drop that object into our hierarchy.
+
+The canvas creates a event system but the UIhelper gameobject has one of its own, so what you want to do is use the one in the UIhelper and delete the one that the canvas created, (EventSystem) 
+
+after that go to the childern of the UIhelper gameobject and find the sphere, manipilate with its scale to your needs.
+
+After that go to the laser pointers also a childern of th e UIhelper gameobject and enable the LINE RENDERER in the inspector, so that you are able to see the "lasers" in the gameMode.
+
+(If it has a missing material, add one of your own.)
+
+After that edit the Laser Pointer Script found on the laserPointer children gameobject of UIhelper, 
+
+and after that, find the LaserBeamBehaviour variable and add a: [SerializeField] on top of it, this allows us to see it in the inspector
+
+and under the values of the script presented on the inspector, choose the: OnWhenHitTarget
+
+after that go to the OVR module script on the EVENT SYSTEM of the UIhelpers, and choose the button that you would be using to click in it: we will be using Secondary Index Trigger.
+
+After that go back to the canvas and in the inspector select the world Space option in the inspector.
+
+After that drag and drop th OVR player controller / Center Eye Anchor, GameObject to the "Event Camera" of the inspector view of the Canvas.
+
+After that you want to change the width and height to 1000 on the CANVAS, let the postion be 0 on the 3 axis, and decrease the sacle on .001, on all the three axis aswell. (Turn on the Gizomos to see the canvas)
+
+After that you can manipulate with the UI of the canvas anyway you please, so now we will be manipulating with buttons slideers background images ettcetera. Match the width and height of the image to the canvas.
+
+After that make sure to drag and drop the laserPointer gameobject on the Canvas OVR Raycaster Script.
+
+
+
+
